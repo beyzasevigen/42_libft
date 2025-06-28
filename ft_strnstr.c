@@ -1,26 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bsevigen <bsevigen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/27 16:11:37 by bsevigen          #+#    #+#             */
-/*   Updated: 2025/06/28 20:17:23 by bsevigen         ###   ########.fr       */
+/*   Created: 2025/06/28 21:26:49 by bsevigen          #+#    #+#             */
+/*   Updated: 2025/06/28 21:30:00 by bsevigen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_bzero(void *s, size_t n)
+char *strnstr(const char *big, const char *little, size_t len)
 {
-    unsigned char    *temp;
+    int		i;
+	int		j;
 
-    temp = (unsigned char *) s;
-    while (n > 0)
-    {
-        *temp = 0;
-        temp++;
-        n--;
-    }
-}
+	i = 0;
+	if (little[i] == '\0')
+		return (&big[i]);
+	while (big[i])
+	{
+		j = 0;
+		while (big[i + j] == little[j] && little[j])
+		{
+			j++;
+		}
+		if (little[j] == '\0')
+			return (&big[i]);
+		i++;
+	}
+	return (0);
+} //bunu düzenle

@@ -1,47 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bsevigen <bsevigen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/28 15:14:02 by bsevigen          #+#    #+#             */
-/*   Updated: 2025/06/28 20:05:16 by bsevigen         ###   ########.fr       */
+/*   Created: 2025/06/28 20:37:17 by bsevigen          #+#    #+#             */
+/*   Updated: 2025/06/28 21:20:03 by bsevigen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+void *calloc(size_t nmemb, size_t size)
 {
-	int i;
-    char *temp;
-
-    i = 0;
-    temp = malloc((ft_strlen(s) + 1) * sizeof(char));
+    unsigned char *temp;
+    
+    size_t area = nmemb * size;
+    temp = malloc(area);
     if (!temp)
         return (NULL);
-    while (s[i])
-    {
-        temp[i] = f(i, s[i]);
-        i++;
-    }
+    ft_bzero(temp, area);
     return (temp);
 }
-
-/* char    f_toupper(unsigned int i, char c)
-{
-    (void)i;
-    if (c >= 'a' && c <= 'z')
-        return (c - 32);
-    return (c);
-}
-
-int main()
-{
-    char *s = "abcdf";
-    printf("%s", ft_strmapi(s, f_toupper));
-} */
-
-// control shift a

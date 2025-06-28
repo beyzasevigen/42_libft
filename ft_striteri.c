@@ -1,47 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bsevigen <bsevigen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/28 15:14:02 by bsevigen          #+#    #+#             */
-/*   Updated: 2025/06/28 20:05:16 by bsevigen         ###   ########.fr       */
+/*   Created: 2025/06/28 20:05:49 by bsevigen          #+#    #+#             */
+/*   Updated: 2025/06/28 20:31:16 by bsevigen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+void ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	int i;
-    char *temp;
+    int i;
 
     i = 0;
-    temp = malloc((ft_strlen(s) + 1) * sizeof(char));
-    if (!temp)
-        return (NULL);
     while (s[i])
     {
-        temp[i] = f(i, s[i]);
+        f(i, &s[i]);
         i++;
     }
-    return (temp);
 }
 
-/* char    f_toupper(unsigned int i, char c)
+void f_bzero(unsigned int i, char *s)
 {
-    (void)i;
-    if (c >= 'a' && c <= 'z')
-        return (c - 32);
-    return (c);
+        *s = 0;
 }
 
 int main()
 {
-    char *s = "abcdf";
-    printf("%s", ft_strmapi(s, f_toupper));
-} */
-
-// control shift a
+    char s[] = "abcdef";
+    printf("%p", s);
+   /*  ft_striteri(s, f_bzero);
+    int i;
+    i = 0;
+    while (i < 8)
+    {
+        printf("%d", s[i]);
+        i++;
+    } */
+}

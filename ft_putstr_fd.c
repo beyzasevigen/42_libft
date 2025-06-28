@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bsevigen <bsevigen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/27 16:11:37 by bsevigen          #+#    #+#             */
-/*   Updated: 2025/06/28 20:17:23 by bsevigen         ###   ########.fr       */
+/*   Created: 2025/06/28 15:41:31 by bsevigen          #+#    #+#             */
+/*   Updated: 2025/06/28 15:42:14 by bsevigen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_bzero(void *s, size_t n)
+void	ft_putstr_fd(char *s, int fd)
 {
-    unsigned char    *temp;
+	int	i;
 
-    temp = (unsigned char *) s;
-    while (n > 0)
-    {
-        *temp = 0;
-        temp++;
-        n--;
-    }
+	i = 0;
+	while (s[i] != '\0')
+	{
+		write(fd, &s[i], 1);
+		i++;
+	}
 }

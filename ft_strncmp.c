@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bsevigen <bsevigen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/27 16:11:37 by bsevigen          #+#    #+#             */
-/*   Updated: 2025/06/28 20:17:23 by bsevigen         ###   ########.fr       */
+/*   Created: 2025/06/28 17:25:38 by bsevigen          #+#    #+#             */
+/*   Updated: 2025/06/28 17:40:17 by bsevigen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_bzero(void *s, size_t n)
+int     ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-    unsigned char    *temp;
+	unsigned int		i;
 
-    temp = (unsigned char *) s;
-    while (n > 0)
-    {
-        *temp = 0;
-        temp++;
-        n--;
-    }
+	i = 0;
+	while (i < n && s1[i] != '\0' && s2[i] != '\0')
+	{
+		if (s1[i] != s2[i])
+		{
+			return (s1[i] - s2[i]);
+		}
+		i++;
+	}
+	if (i < n)
+	{
+		return (s1[i] - s2[i]);
+	}
+	return (0);
 }

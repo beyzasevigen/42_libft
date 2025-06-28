@@ -6,7 +6,7 @@
 /*   By: bsevigen <bsevigen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 19:42:04 by bsevigen          #+#    #+#             */
-/*   Updated: 2025/06/28 14:14:26 by bsevigen         ###   ########.fr       */
+/*   Updated: 2025/06/28 17:42:35 by bsevigen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char *ft_substr(const char *s, unsigned int start, size_t len)
     char *substr = malloc(len +1);
     if (!substr)
         return (NULL);
-    
+
     size_t i = 0;
     while (i < len)
     {
