@@ -6,11 +6,9 @@
 /*   By: bsevigen <bsevigen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 17:19:37 by bsevigen          #+#    #+#             */
-/*   Updated: 2025/05/26 18:00:32 by bsevigen         ###   ########.fr       */
+/*   Updated: 2025/06/28 15:02:09 by bsevigen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int		ft_isalpha(int c)
 {

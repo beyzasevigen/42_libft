@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bsevigen <bsevigen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/26 17:33:56 by bsevigen          #+#    #+#             */
-/*   Updated: 2025/06/28 15:02:15 by bsevigen         ###   ########.fr       */
+/*   Created: 2025/06/28 15:09:37 by bsevigen          #+#    #+#             */
+/*   Updated: 2025/06/28 15:09:47 by bsevigen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int     ft_isalnum(int c)
+char *ft_strchr(const char *s, int c)
 {
-    if ((c >= 0 && c <= 9) || (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+    while (*s)
     {
-        return (1);
+        if (*s == (char)c)
+            return (char*)s;
+        s++;
     }
-    return (0);
+    if (*s == (char)c)
+		return ((char *)s);
+    return 0;
 }

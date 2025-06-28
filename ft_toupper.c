@@ -6,8 +6,15 @@
 /*   By: bsevigen <bsevigen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 16:11:25 by bsevigen          #+#    #+#             */
-/*   Updated: 2025/05/27 16:12:27 by bsevigen         ###   ########.fr       */
+/*   Updated: 2025/06/28 15:00:21 by bsevigen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+int    ft_toupper(int c)
+{
+    if (c >= 'a' && c <= 'z')
+        return (c - 32);
+    return (c);
+}
