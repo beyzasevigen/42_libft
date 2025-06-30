@@ -26,6 +26,7 @@ char *ft_strdup (const char *s1)
     tmp [i] = '\0';
     return (tmp);
 }
+
 int main ()
 {
 char *tmp = "merhaba jfhj hjdhaeeee";

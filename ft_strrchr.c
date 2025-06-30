@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsevigen <bsevigen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bsevigen <bsevigen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/27 16:11:37 by bsevigen          #+#    #+#             */
-/*   Updated: 2025/06/28 20:17:23 by bsevigen         ###   ########.fr       */
+/*   Created: 2025/06/29 17:25:54 by bsevigen            #+#    #+#             */
+/*   Updated: 2025/06/29 17:25:54 by bsevigen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_bzero(void *s, size_t n)
+char    *ft_strrchr(const char *s, int c)
 {
-    unsigned char    *temp;
+    int last;
 
-    temp = (unsigned char *) s;
-    while (n > 0)
+    last = ft_strlen(s);
+    while (last >= 0)
     {
-        *temp = 0;
-        temp++;
-        n--;
+        if (s[last] == (char)c)
+            return (&s[last]);
+        last--;
     }
+    return (NULL);
 }
