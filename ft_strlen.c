@@ -6,20 +6,20 @@
 /*   By: bsevigen <bsevigen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 17:34:13 by bsevigen          #+#    #+#             */
-/*   Updated: 2025/05/27 16:16:11 by bsevigen         ###   ########.fr       */
+/*   Updated: 2025/06/30 21:42:44 by bsevigen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t    ft_strlen(const char *s)
+size_t	ft_strlen(const char *s)
 {
 	size_t	i;
-	
+
 	i = 0;
 	while (s[i] != '\0')
 	{
 		i++;
 	}
-	return i;
+	return (i);
 }

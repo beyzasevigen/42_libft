@@ -6,19 +6,19 @@
 /*   By: bsevigen <bsevigen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 15:09:37 by bsevigen          #+#    #+#             */
-/*   Updated: 2025/06/28 15:09:47 by bsevigen         ###   ########.fr       */
+/*   Updated: 2025/06/30 21:17:23 by bsevigen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
-    while (*s)
-    {
-        if (*s == (char)c)
-            return (char*)s;
-        s++;
-    }
-    if (*s == (char)c)
+	while (*s)
+	{
+		if (*s == (char)c)
+			return ((char *)s);
+		s++;
+	}
+	if (*s == (char)c)
 		return ((char *)s);
-    return 0;
+	return (0);
 }

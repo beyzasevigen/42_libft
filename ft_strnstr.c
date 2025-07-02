@@ -6,7 +6,7 @@
 /*   By: bsevigen <bsevigen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 21:26:49 by bsevigen          #+#    #+#             */
-/*   Updated: 2025/06/28 21:30:00 by bsevigen         ###   ########.fr       */
+/*   Updated: 2025/07/01 17:12:03 by bsevigen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,27 @@
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-    size_t		i;
-	size_t		j;
+	size_t	i;
+	size_t	j;
+	char	*str_big;
+	char	*str_little;
 
+	str_big = (char *)big;
+	str_little = (char *)little;
 	i = 0;
-	if (little[i] == '\0')
-		return (&big[i]);
-	while (big[i] && i < len)
+	if (str_little[i] == '\0')
+		return (str_big);
+	while (str_big[i] && i < len)
 	{
 		j = 0;
-		while ((big[i + j] == little[j]) && little[j] && (i + j) < len)
+		while ((str_big[i + j] == str_little[j])
+			&& str_little[j] && (i + j) < len)
 		{
 			j++;
 		}
-		if (little[j] == '\0')
-			return (&big[i]);
+		if (str_little[j] == '\0')
+			return (&str_big[i]);
 		i++;
 	}
 	return (0);
-} //bunu düzenle
+}

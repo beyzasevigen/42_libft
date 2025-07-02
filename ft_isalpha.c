@@ -6,15 +6,15 @@
 /*   By: bsevigen <bsevigen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 17:19:37 by bsevigen          #+#    #+#             */
-/*   Updated: 2025/06/28 15:02:09 by bsevigen         ###   ########.fr       */
+/*   Updated: 2025/06/30 21:10:12 by bsevigen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_isalpha(int c)
+int	ft_isalpha(int c)
 {
-    if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
-    {
-        return 1;
-    }
-    return 0;
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+	{
+		return (1);
+	}
+	return (0);
 }

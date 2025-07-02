@@ -6,13 +6,13 @@
 /*   By: bsevigen <bsevigen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 17:34:09 by bsevigen          #+#    #+#             */
-/*   Updated: 2025/05/27 16:08:57 by bsevigen         ###   ########.fr       */
+/*   Updated: 2025/06/30 21:10:53 by bsevigen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int     ft_isprint(int c)
+int	ft_isprint(int c)
 {
 	if (c >= 32 && c <= 126)
-        return (1);
-    return (0);
+		return (1);
+	return (0);
 }

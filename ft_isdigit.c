@@ -6,15 +6,15 @@
 /*   By: bsevigen <bsevigen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 17:34:06 by bsevigen          #+#    #+#             */
-/*   Updated: 2025/05/26 18:00:42 by bsevigen         ###   ########.fr       */
+/*   Updated: 2025/07/01 17:13:55 by bsevigen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int     ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
-    if (c >= 0 && c <= 9)
-    {
-        return (1);
-    }
-    return (0);
+	if (c >= '0' && c <= '9')
+	{
+		return (1);
+	}
+	return (0);
 }

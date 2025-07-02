@@ -6,15 +6,15 @@
 /*   By: bsevigen <bsevigen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 17:34:02 by bsevigen          #+#    #+#             */
-/*   Updated: 2025/06/28 15:02:24 by bsevigen         ###   ########.fr       */
+/*   Updated: 2025/06/30 21:10:23 by bsevigen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int     ft_isascii(int c)
+int	ft_isascii(int c)
 {
-    if (c >= 0 && c <= 127)
-    {
-        return (1);
-    }
-    return (0);
+	if (c >= 0 && c <= 127)
+	{
+		return (1);
+	}
+	return (0);
 }

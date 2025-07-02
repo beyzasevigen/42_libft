@@ -6,13 +6,13 @@
 /*   By: bsevigen <bsevigen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 15:01:30 by bsevigen          #+#    #+#             */
-/*   Updated: 2025/06/28 15:02:01 by bsevigen         ###   ########.fr       */
+/*   Updated: 2025/06/30 21:48:56 by bsevigen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int    ft_tolower(int c)
+int	ft_tolower(int c)
 {
-    if (c >= 'A' && c <='Z')
-        return (c + 32);
-    return (c);
+	if (c >= 'A' && c <= 'Z')
+		return (c + 32);
+	return (c);
 }

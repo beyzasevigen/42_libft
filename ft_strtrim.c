@@ -6,74 +6,83 @@
 /*   By: bsevigen <bsevigen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/01 15:41:22 by bsevigen          #+#    #+#             */
-/*   Updated: 2025/06/28 14:14:12 by bsevigen         ###   ########.fr       */
+/*   Updated: 2025/06/30 22:01:04 by bsevigen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strtrim(char const *s1, char const *set)
+int	get_start(char const *s1, char const *set)
 {
-    char *temp;
-    int i;
-    int j;
-    int k;
-    int len_s1;
-    int ismatched;
-    int len_temp;
+	int	i;
+	int	j;
+	int	ismatched;
 
-    i = 0;
-    k = 0;
-    len_s1 = ft_strlen(s1) - 1;
-    while (s1[i])  //aabacevapbaaba
-    {
-        ismatched = 0;
-        j = 0;
-        while (set[j]) //a b
-        {
-            if (s1[i] == set[j])
-            {
-                ismatched = 1;
-                break;
-            }
-            j++;
-        }
-        if (!ismatched)
-            break;
-        i++;
-    }
-    while (len_s1 >= i)  //aabacevapbaaba
-    {
-        ismatched = 0;
-        j = 0;
-        while (set[j]) //a b
-        {
-            if (s1[len_s1] == set[j])
-            {
-                ismatched = 1;
-                break;
-            }
-            j++;
-        }
-        if (!ismatched)
-            break;
-        len_s1--;
-    }
-
-    len_temp = len_s1 - i + 1;
-    temp = malloc((len_temp + 1) * sizeof(char));
-    if (!temp)
-        return (NULL);
-    while (len_temp)
-    {
-        temp[k++] = s1[i++];
-        len_temp--;
-    }
-    temp[k] = '\0';
-    return (temp);
+	i = 0;
+	while (s1[i])
+	{
+		ismatched = 0;
+		j = 0;
+		while (set[j])
+		{
+			if (s1[i] == set[j])
+			{
+				ismatched = 1;
+				break ;
+			}
+			j++;
+		}
+		if (!ismatched)
+			break ;
+		i++;
+	}
+	return (i);
 }
 
-int main(void)
+int	get_end(char const *s1, char const *set, int start)
 {
-    printf("%s", ft_strtrim("ababaaaMy name is Simonbbaaabba", "ab"));
+	int	j;
+	int	ismatched;
+	int	len_s1;
+
+	len_s1 = ft_strlen(s1) - 1;
+	while (len_s1 >= start)
+	{
+		ismatched = 0;
+		j = 0;
+		while (set[j])
+		{
+			if (s1[len_s1] == set[j])
+			{
+				ismatched = 1;
+				break ;
+			}
+			j++;
+		}
+		if (!ismatched)
+			break ;
+		len_s1--;
+	}
+	return (len_s1);
+}
+
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	char	*temp;
+	int		i;
+	int		k;
+	int		len_s1;
+	int		len_temp;
+
+	k = 0;
+	i = get_start(s1, set);
+	len_s1 = get_end(s1, set, i);
+	len_temp = len_s1 - i + 1;
+	temp = malloc((len_temp + 1) * sizeof(char));
+	if (!temp)
+		return (NULL);
+	while (len_temp--)
+		temp[k++] = s1[i++];
+	temp[k] = '\0';
+	return (temp);
 }

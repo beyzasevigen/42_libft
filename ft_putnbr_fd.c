@@ -6,16 +6,11 @@
 /*   By: bsevigen <bsevigen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 15:43:47 by bsevigen          #+#    #+#             */
-/*   Updated: 2025/06/28 15:44:10 by bsevigen         ###   ########.fr       */
+/*   Updated: 2025/07/02 18:05:31 by bsevigen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-void	ft_putchar_fd(char c, int fd)
-{
-	write(fd, &c, 1);
-}
 
 void	ft_putnbr_fd(int n, int fd)
 {

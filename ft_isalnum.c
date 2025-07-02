@@ -6,15 +6,17 @@
 /*   By: bsevigen <bsevigen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 17:33:56 by bsevigen          #+#    #+#             */
-/*   Updated: 2025/06/28 15:02:15 by bsevigen         ###   ########.fr       */
+/*   Updated: 2025/07/01 17:15:09 by bsevigen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int     ft_isalnum(int c)
+int	ft_isalnum(int c)
 {
-    if ((c >= 0 && c <= 9) || (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
-    {
-        return (1);
-    }
-    return (0);
+	if ((c >= '0' && c <= '9')
+		|| (c >= 'a' && c <= 'z')
+		|| (c >= 'A' && c <= 'Z'))
+	{
+		return (1);
+	}
+	return (0);
 }

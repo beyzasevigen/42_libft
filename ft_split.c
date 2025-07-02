@@ -6,70 +6,36 @@
 /*   By: bsevigen <bsevigen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 18:23:15 by bsevigen          #+#    #+#             */
-/*   Updated: 2025/06/27 19:39:24 by bsevigen         ###   ########.fr       */
+/*   Updated: 2025/07/02 17:34:01 by bsevigen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int count_words(char const *s, char c)
+static int	count_words(char const *s, char c)
 {
-    int counter;
-    int i;
+	int	counter;
+	int	i;
 
-    counter = 0;
-    i = 0;
-    while (s[i]) //gdushfu    hd hdj jd
-    {
-        if (i != 0 && s[i] != c && s[i - 1] == c)
-            counter++;
-        else if (i == 0 && (s[0] != c))
-            counter++;
-        i++;
-    }
-    return counter;
-}
-
-static int word_len(char const *s,  char c)
-{
-	int len = 0;
-	while (s[len] && s[len] != c)
-		len++;
-	return (len);
-}
-
-static char **word_dup(char const *s,  char c)
-{
-	int i;
-	int j;
-	char **str;
-	int word_count;
-
+	counter = 0;
 	i = 0;
-	j = 0;
-	word_count = count_words(s, c);
-	str = malloc((word_count + 1) * sizeof(char *));
-	if (!str)
-		return (NULL);
-		
-	str[word_count] = NULL;
-	while (str[i])
+	while (s[i])
 	{
-		ft_substr(s,0,word_len(s,c));
-		str[i] = malloc(ft_strlen(str[i]) * sizeof(char));
-		
-		if (!str)
-			return (NULL);
+		if (i != 0 && s[i] != c && s[i - 1] == c)
+			counter++;
+		else if (i == 0 && (s[0] != c))
+			counter++;
 		i++;
 	}
+	return (counter);
 }
 
-static void free_all(char **str)
+static void	free_all(char **str)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	while(str[i])
+	while (str[i])
 	{
 		free(str[i]);
 		i++;
@@ -78,13 +44,56 @@ static void free_all(char **str)
 	free(str);
 }
 
-
-
-char **ft_split(char const *s, char c)
+static char	**ft_put_str(char **arr, char c, const char *s)
 {
-	char **full_str;
-	int count_word;
+	int	i;
+	int	j;
 
-	
+	i = 0;
+	j = 0;
+	while (*s)
+	{
+		while (s[j] && s[j] == c)
+			j++;
+		s += j;
+		if (*s)
+		{
+			j = 0;
+			while (s[j] && s[j] != c)
+				j++;
+			arr[i] = ft_substr(s, 0, j);
+			i++;
+		}
+	}
+	arr[i] = NULL;
+	return (arr);
 }
-// "merhaba dünya" =s 
+
+char	**ft_split(const char *s, char c)
+{
+	char	**arr;
+	int		count;
+
+	count = count_words(s, c);
+	arr = malloc(sizeof (char *) * (count + 1));
+	if (!arr)
+		return (0);
+	arr = ft_put_str(arr, c, s);
+	if (!arr)
+		free_all(arr);
+	return (arr);
+}
+
+/*   #include <stdio.h>
+int main()
+{
+	char *p = "Foo Bar Baz";
+	char **str = ft_split(p, ' ');
+	int i;
+	i = 0;
+	while(str[i])
+	{
+		printf("%c\n", str[i][i]);
+		i++;
+	}
+}  */
