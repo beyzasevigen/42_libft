@@ -6,7 +6,7 @@
 /*   By: bsevigen <bsevigen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 18:23:15 by bsevigen          #+#    #+#             */
-/*   Updated: 2025/07/02 17:34:01 by bsevigen         ###   ########.fr       */
+/*   Updated: 2025/07/03 21:03:38 by bsevigen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,17 +83,3 @@ char	**ft_split(const char *s, char c)
 		free_all(arr);
 	return (arr);
 }
-
-/*   #include <stdio.h>
-int main()
-{
-	char *p = "Foo Bar Baz";
-	char **str = ft_split(p, ' ');
-	int i;
-	i = 0;
-	while(str[i])
-	{
-		printf("%c\n", str[i][i]);
-		i++;
-	}
-}  */

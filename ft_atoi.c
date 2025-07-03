@@ -6,11 +6,11 @@
 /*   By: bsevigen <bsevigen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 17:18:33 by bsevigen          #+#    #+#             */
-/*   Updated: 2025/06/28 17:18:49 by bsevigen         ###   ########.fr       */
+/*   Updated: 2025/07/03 21:34:37 by bsevigen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	int		result;
 	int		sign;

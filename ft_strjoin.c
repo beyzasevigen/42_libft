@@ -6,7 +6,7 @@
 /*   By: bsevigen <bsevigen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 20:11:13 by bsevigen          #+#    #+#             */
-/*   Updated: 2025/06/30 21:40:59 by bsevigen         ###   ########.fr       */
+/*   Updated: 2025/07/03 21:04:06 by bsevigen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	temp_str[i + j] = '\0';
 	return (temp_str);
 }
-
-/* int main(int argc, char const *argv[])
-{
-
-	printf("%s", ft_strjoin("hello", "world"));
-	return 0;
-} */

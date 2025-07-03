@@ -6,13 +6,13 @@
 /*   By: bsevigen <bsevigen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 19:42:04 by bsevigen          #+#    #+#             */
-/*   Updated: 2025/06/30 22:02:08 by bsevigen         ###   ########.fr       */
+/*   Updated: 2025/07/03 21:42:13 by bsevigen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	get_substr_len(const char *s, unsigned int start, size_t len)
+static size_t	get_substr_len(const char *s, unsigned int start, size_t len)
 {
 	size_t	s_len;
 	size_t	new_len;

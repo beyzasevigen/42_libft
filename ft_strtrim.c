@@ -6,13 +6,13 @@
 /*   By: bsevigen <bsevigen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/01 15:41:22 by bsevigen          #+#    #+#             */
-/*   Updated: 2025/06/30 22:01:04 by bsevigen         ###   ########.fr       */
+/*   Updated: 2025/07/03 21:42:56 by bsevigen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	get_start(char const *s1, char const *set)
+static int	get_start(char const *s1, char const *set)
 {
 	int	i;
 	int	j;
@@ -39,7 +39,7 @@ int	get_start(char const *s1, char const *set)
 	return (i);
 }
 
-int	get_end(char const *s1, char const *set, int start)
+static int	get_end(char const *s1, char const *set, int start)
 {
 	int	j;
 	int	ismatched;
