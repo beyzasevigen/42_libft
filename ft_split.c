@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsevigen <bsevigen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bsevigen <bsevigen@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 18:23:15 by bsevigen          #+#    #+#             */
-/*   Updated: 2025/07/03 21:03:38 by bsevigen         ###   ########.fr       */
+/*   Updated: 2025/07/04 19:26:45 by bsevigen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ static void	free_all(char **str)
 		free(str[i]);
 		i++;
 	}
-	free(str[i]);
 	free(str);
 }
 
